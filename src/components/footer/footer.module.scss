@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.root {
+  height: 5rem;
+  background-color: $color-header-footer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.play {
+  &:before {
+    content: ' \25B6';
+  }
+}
+
+.stop {
+  &:before {
+    content: ' \25FE';
+  }
+}

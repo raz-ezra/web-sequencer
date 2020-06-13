@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.root {
+  height: 5rem;
+  background-color: $color-header-footer;
+  color: $color-black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  margin: 0 0.5rem;
+}

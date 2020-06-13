@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.root {
+  display: flex;
+  flex-grow: 1;
+  &:not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+}
+
+.name {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid black;
+  background-color: $color-instrument-names;
+  word-wrap: normal;
+  text-align: center;
+}

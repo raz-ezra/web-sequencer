@@ -1,0 +1,60 @@
+@import '../../../styles/variables';
+
+.root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-align: center;
+}
+
+.showBarLine {
+  &:not(:last-child) {
+    border-right: 2px solid red !important;
+  }
+}
+
+.dontShowBarLine {
+  &:not(:last-child) {
+    border-right: 1px dashed black;
+  }
+}
+
+.strongBeat {
+  background-color: $color-strong-beat;
+}
+
+.active {
+  background-color: lightgray;
+}
+
+.level {
+  &--0 {
+    &::before {
+      content: ' \25CB';
+    }
+  }
+
+  &--1 {
+    &::before {
+      content: ' \25CF';
+      color: green;
+    }
+  }
+
+  &--2 {
+    &::before {
+      content: ' \25CF';
+      color: orange;
+    }
+  }
+
+  &--3 {
+    &::before {
+      content: ' \25CF';
+      color: red;
+    }
+  }
+}

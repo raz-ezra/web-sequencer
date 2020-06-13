@@ -1,0 +1,38 @@
+@import 'styles/variables.scss';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //Defines what 1rem is (16px. relative to default browser font size)
+  font-size: 62.5%; //10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+  box-sizing: border-box;
+  font-size: $default-font-size;
+}
