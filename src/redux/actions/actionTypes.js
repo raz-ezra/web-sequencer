@@ -6,3 +6,5 @@ export const START_PLAY = 'START_PLAY';
 export const STOP_PLAY = 'STOP_PLAY';
 export const MOVE_PLAYHEAD = 'MOVE_PLAYHEAD';
 export const UPDATE_SOUND = 'UPDATE_SOUND';
+export const TOGGLE_EQ = 'TOGGLE_EQ';
+export const CHANGE_BAND = 'CHANGE_BAND';

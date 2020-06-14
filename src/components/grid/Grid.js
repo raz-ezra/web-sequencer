@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 import MIDISounds from 'midi-sounds-react';
 
 import Instrument from '../instrument/Instrument';
+import EQ from './eq/EQ';
 
 import css from './grid.module.scss';
 
 let playTimer;
 
-const Grid = ({ instruments, playActive, tempo, numOfNodes }) => {
+const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands }) => {
   const [drumsList, setDrumsList] = useState([]);
   const [midiSounds, setMidiSounds] = useState(null);
   const [playPosition, setPlayPosition] = useState(-1);
@@ -32,6 +33,21 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes }) => {
     }
   }, [playActive, playPosition]);
 
+  useEffect(() => {
+    if (midiSounds) {
+      midiSounds.setBand32(bands['32']);
+      midiSounds.setBand64(bands['64']);
+      midiSounds.setBand128(bands['128']);
+      midiSounds.setBand256(bands['256']);
+      midiSounds.setBand512(bands['512']);
+      midiSounds.setBand1k(bands['1k']);
+      midiSounds.setBand2k(bands['2k']);
+      midiSounds.setBand4k(bands['4k']);
+      midiSounds.setBand8k(bands['8k']);
+      midiSounds.setBand16k(bands['16k']);
+    }
+  }, [bands, midiSounds]);
+
   function movePlayHead() {
     let newPlayPosition = playPosition === numOfNodes - 1 ? 0 : playPosition + 1;
     setPlayPosition(newPlayPosition);
@@ -53,27 +69,32 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes }) => {
             );
           })
         : ''}
+      {midiSounds && showEQ ? <EQ /> : ''}
       <MIDISounds ref={ref => setMidiSounds(ref)} appElementName='app' />
     </div>
   );
 };
-
-function mapsStateToProps({ instruments, player, settings }) {
-  return {
-    instruments,
-    playActive: player.playActive,
-    tempo:
-      (60000 / settings.tempo.value) * (settings.timeSigBottom.value / settings.division.value),
-    numOfNodes: settings.numOfNodes,
-  };
-}
 
 Grid.propTypes = {
   instruments: PropTypes.object.isRequired,
   playActive: PropTypes.bool.isRequired,
   tempo: PropTypes.number.isRequired,
   numOfNodes: PropTypes.number.isRequired,
+  showEQ: PropTypes.bool.isRequired,
+  bands: PropTypes.object.isRequired,
 };
+
+function mapsStateToProps({ instruments, player, settings, eq }) {
+  return {
+    instruments,
+    playActive: player.playActive,
+    tempo:
+      (60000 / settings.tempo.value) * (settings.timeSigBottom.value / settings.division.value),
+    numOfNodes: settings.numOfNodes,
+    showEQ: eq.showEQ,
+    bands: eq.bands,
+  };
+}
 
 const mapDispatchToProps = {};
 

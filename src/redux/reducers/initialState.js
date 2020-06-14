@@ -2,6 +2,21 @@ export default {
   player: {
     playActive: false,
   },
+  eq: {
+    showEQ: false,
+    bands: {
+      '32': 0,
+      '64': 0,
+      '128': 0,
+      '256': 0,
+      '512': 0,
+      '1k': 0,
+      '2k': 0,
+      '4k': 0,
+      '8k': 0,
+      '16k': 0,
+    },
+  },
   settings: {
     tempo: { value: 120, displayText: 'Tempo', name: 'tempo', maxChars: 3 },
     timeSigTop: {

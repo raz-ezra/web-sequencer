@@ -13,3 +13,17 @@
 .divider {
   margin: 0 0.5rem;
 }
+
+.eq {
+  & input {
+    display: none;
+  }
+
+  & label {
+    padding: 0.2rem 0.5rem;
+    background-color: $color-white;
+    margin-left: 2rem;
+    border-radius: 0.5rem;
+    border: 0.1rem solid $color-black;
+  }
+}

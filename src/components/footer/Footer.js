@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 
-import { startPlay, stopPlay } from '../../redux/actions/footerActions';
+import { startPlay, stopPlay } from '../../redux/actions/playerActions';
 
 import css from './footer.module.scss';
 
