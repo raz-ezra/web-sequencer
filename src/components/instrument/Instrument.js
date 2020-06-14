@@ -7,7 +7,7 @@ import { updateNode, updateNodesArray, updateSound } from '../../redux/actions/i
 
 import css from './instruments.module.scss';
 
-const nameWidth = 150;
+const nameWidth = 140;
 const gridWidth = screen.width - nameWidth;
 
 const Instrument = ({
@@ -53,7 +53,7 @@ const Instrument = ({
 
   return (
     <div className={css.root}>
-      <div className={css.name} style={{ width: nameWidth }}>
+      <div className={css.name} style={{ minWidth: nameWidth }}>
         <select value={sound} onChange={e => updateValue(e)}>
           {drumsList.length !== 0
             ? drumsList.map((drums, i) => {

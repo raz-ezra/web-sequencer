@@ -18,4 +18,8 @@
   background-color: $color-instrument-names;
   word-wrap: normal;
   text-align: center;
+
+  & select {
+    width: 90%;
+  }
 }

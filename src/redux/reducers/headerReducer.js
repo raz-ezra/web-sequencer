@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
 import initialState from './initialState';
 
-export default function headerReducer(state = initialState.settings, action) {
+export default function settingsReducer(state = initialState.settings, action) {
   switch (action.type) {
     case types.UPDATE_SETTINS: {
       const { division, bars, timeSigTop, timeSigBottom } = state;
