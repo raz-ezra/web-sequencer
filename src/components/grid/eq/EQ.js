@@ -43,8 +43,8 @@ const EQ = ({ bands, changeBand, resetBandsSuccess, echo, changeEchoSuccess, tog
         <label htmlFor='echo'>Echo Level</label>
         <input
           type='range'
-          min='-6'
-          max='6'
+          min='0'
+          max='5'
           value={echo}
           onChange={e => changeEchoSuccess(parseInt(e.target.value))}
         />
