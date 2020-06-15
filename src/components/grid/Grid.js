@@ -18,7 +18,6 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands, echo 
   useEffect(() => {
     if (midiSounds && drumsList.length === 0) {
       setDrumsList(midiSounds.player.loader.drumKeys());
-      midiSounds.cacheDrum;
       midiSounds.player.loader.waitLoad;
     }
   }, [midiSounds]);

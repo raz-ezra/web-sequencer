@@ -34,6 +34,7 @@ const Instrument = ({
   useEffect(() => {
     setSound(instrument.sound);
     midiSounds.cacheDrum(instrument.sound);
+    playSound(0);
   }, [instrument.sound]);
 
   function handleClick(node, value) {
@@ -46,7 +47,7 @@ const Instrument = ({
   }
 
   function playSound(velocity) {
-    let volume = ((velocity - 1) * (1 - 0.3)) / (3 - 1) + 0.3;
+    let volume = velocity / 3;
     midiSounds.setDrumVolume(sound, volume);
     midiSounds.playDrumsNow([sound]);
   }
