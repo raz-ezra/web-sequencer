@@ -24,7 +24,7 @@ const Header = ({ settings, updateSettings, toggleEqSuccess, showEQ }) => {
       <div className={css.divider}>{'/'}</div>
       <Control details={timeSigBottom} handleUpdate={handleUpdate} />
       <div className={css.eq}>
-        <label htmlFor='eq'>Show EQ</label>
+        <label htmlFor='eq'>{!showEQ ? 'Show' : 'Hide'} Audio Settings</label>
         <input type='checkbox' checked={showEQ} id='eq' onChange={() => toggleEqSuccess()} />
       </div>
     </div>

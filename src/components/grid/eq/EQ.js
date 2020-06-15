@@ -2,13 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { changeBand, resetBandsSuccess, changeEchoSuccess } from '../../../redux/actions/eqActions';
+import {
+  changeBand,
+  resetBandsSuccess,
+  changeEchoSuccess,
+  toggleEqSuccess,
+} from '../../../redux/actions/eqActions';
 
 import css from './eq.module.scss';
 
-const EQ = ({ bands, changeBand, resetBandsSuccess, echo, changeEchoSuccess }) => {
+const EQ = ({ bands, changeBand, resetBandsSuccess, echo, changeEchoSuccess, toggleEqSuccess }) => {
   return (
     <div className={css.root}>
+      <div className={css.close} onClick={() => toggleEqSuccess()}>
+        X
+      </div>
       <div className={css.eqBands}>
         {Object.keys(bands).map(band => {
           return (
@@ -54,6 +62,7 @@ EQ.propTypes = {
   changeBand: PropTypes.func.isRequired,
   resetBandsSuccess: PropTypes.func.isRequired,
   changeEchoSuccess: PropTypes.func.isRequired,
+  toggleEqSuccess: PropTypes.func.isRequired,
   echo: PropTypes.number.isRequired,
 };
 
@@ -68,6 +77,7 @@ const mapDispatchToProps = {
   changeBand,
   resetBandsSuccess,
   changeEchoSuccess,
+  toggleEqSuccess,
 };
 
 export default connect(mapsStateToProps, mapDispatchToProps)(EQ);
