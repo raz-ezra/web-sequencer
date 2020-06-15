@@ -3,7 +3,7 @@ export default {
     playActive: false,
   },
   eq: {
-    showEQ: true,
+    showEQ: false,
     bands: {
       '32': 0,
       '64': 0,
