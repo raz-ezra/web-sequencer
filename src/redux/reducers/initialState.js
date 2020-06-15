@@ -3,7 +3,7 @@ export default {
     playActive: false,
   },
   eq: {
-    showEQ: false,
+    showEQ: true,
     bands: {
       '32': 0,
       '64': 0,
@@ -16,6 +16,7 @@ export default {
       '8k': 0,
       '16k': 0,
     },
+    echo: 0,
   },
   settings: {
     tempo: { value: 120, displayText: 'Tempo', name: 'tempo', maxChars: 3 },

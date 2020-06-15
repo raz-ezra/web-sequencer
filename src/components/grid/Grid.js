@@ -10,7 +10,7 @@ import css from './grid.module.scss';
 
 let playTimer;
 
-const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands }) => {
+const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands, echo }) => {
   const [drumsList, setDrumsList] = useState([]);
   const [midiSounds, setMidiSounds] = useState(null);
   const [playPosition, setPlayPosition] = useState(-1);
@@ -18,6 +18,7 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands }) => 
   useEffect(() => {
     if (midiSounds && drumsList.length === 0) {
       setDrumsList(midiSounds.player.loader.drumKeys());
+      midiSounds.cacheDrum;
       midiSounds.player.loader.waitLoad;
     }
   }, [midiSounds]);
@@ -45,8 +46,9 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands }) => 
       midiSounds.setBand4k(bands['4k']);
       midiSounds.setBand8k(bands['8k']);
       midiSounds.setBand16k(bands['16k']);
+      midiSounds.setEchoLevel(echo);
     }
-  }, [bands, midiSounds]);
+  }, [bands, echo, midiSounds]);
 
   function movePlayHead() {
     let newPlayPosition = playPosition === numOfNodes - 1 ? 0 : playPosition + 1;
@@ -82,6 +84,7 @@ Grid.propTypes = {
   numOfNodes: PropTypes.number.isRequired,
   showEQ: PropTypes.bool.isRequired,
   bands: PropTypes.object.isRequired,
+  echo: PropTypes.number.isRequired,
 };
 
 function mapsStateToProps({ instruments, player, settings, eq }) {
@@ -93,6 +96,7 @@ function mapsStateToProps({ instruments, player, settings, eq }) {
     numOfNodes: settings.numOfNodes,
     showEQ: eq.showEQ,
     bands: eq.bands,
+    echo: eq.echo,
   };
 }
 

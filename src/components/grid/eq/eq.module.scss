@@ -10,6 +10,12 @@
   border: 0.3rem solid $color-black;
   padding: 1rem 2rem;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eqBands {
+  display: flex;
 }
 
 .band {
@@ -21,4 +27,26 @@
     width: 5rem;
     -webkit-appearance: slider-vertical;
   }
+}
+
+.eqReset {
+  margin-top: 1rem;
+  padding: 0.2rem 0.3rem;
+}
+
+.echo {
+  margin-top: 2rem;
+
+  & *:not(:first-child) {
+    margin-left: 2rem;
+  }
+
+  & p {
+    display: inline-block;
+    width: 1.5rem;
+  }
+}
+
+.echoReset {
+  padding: 0.2rem 0.3rem;
 }

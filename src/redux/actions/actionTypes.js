@@ -8,3 +8,5 @@ export const MOVE_PLAYHEAD = 'MOVE_PLAYHEAD';
 export const UPDATE_SOUND = 'UPDATE_SOUND';
 export const TOGGLE_EQ = 'TOGGLE_EQ';
 export const CHANGE_BAND = 'CHANGE_BAND';
+export const RESET_BANDS = 'RESET_BANDS';
+export const CHANGE_ECHO = 'CHANGE_ECHO';
