@@ -45,7 +45,7 @@ const Grid = ({ instruments, playActive, tempo, numOfNodes, showEQ, bands, echo 
       midiSounds.setBand4k(bands['4k']);
       midiSounds.setBand8k(bands['8k']);
       midiSounds.setBand16k(bands['16k']);
-      midiSounds.setEchoLevel(echo);
+      midiSounds.setEchoLevel(echo / 5);
     }
   }, [bands, echo, midiSounds]);
 
