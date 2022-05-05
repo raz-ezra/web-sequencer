@@ -1,4 +1,5 @@
 ### Web Based Drums Sequencer
+[Play with it :)](https://web-sequencer.vercel.app/)
 <p align="center">
     <img src="/docs/Sequencer.gif" alt="Drums Sequencer" height="400"/>
 </p>
